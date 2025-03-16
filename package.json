@@ -1,0 +1,29 @@
+{
+  "name": "street-fashion-site",
+  "version": "1.0.0",
+  "description": "A street fashion e-commerce site featuring homegrown brands",
+  "main": "index.js",
+  "scripts": {
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview"
+  },
+  "dependencies": {
+    "astro": "^5.0.0",
+    "@astrojs/netlify": "^6.2.3",
+    "@astrojs/tailwind": "^6.0.0",
+    "stripe": "^16.10.0",
+    "tailwindcss": "^3.4.13"
+  },
+  "devDependencies": {
+    "prettier": "^3.2.5",
+    "prettier-plugin-astro": "^0.14.1"
+  },
+  "author": "AbhiDeshmukh06",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/AbhiDeshmukh06/street-fashion-site.git"
+  }
+}
