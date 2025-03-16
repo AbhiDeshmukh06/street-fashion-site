@@ -1,0 +1,27 @@
+<script>
+  import Stripe from 'stripe';
+
+  const stripe = Stripe('your_stripe_public_key');
+  
+  async function handleCheckout() {
+    const response = await fetch('/.netlify/functions/checkout', {
+      method: 'POST',
+      body: JSON.stringify({ amount: 3500 }), // Example: $35.00 in cents
+    });
+    const { clientSecret } = await response.json();
+
+    const result = await stripe.confirmCardPayment(clientSecret, {
+      payment_method: { card: { /* Stripe Elements */ } },
+    });
+
+    if (result.error) {
+      alert(result.error.message);
+    } else {
+      alert('Payment successful!');
+    }
+  }
+
+  document.querySelectorAll('button').forEach(btn => {
+    btn.addEventListener('click', handleCheckout);
+  });
+</script>
